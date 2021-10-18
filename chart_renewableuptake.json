@@ -1,0 +1,97 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A ranged dot plot that uses 'layer' to convey changing life expectancy for the five most populous countries (between 1955 and 2000).",
+    "width" : 535,
+    "height" : 550,
+    "title" : "Renewables as a % of Total Electricity",
+    "data": {"url": "data/renewablesuptake.csv"},
+    "transform": [
+      {
+        "filter": {
+          "field": "LOCATION",
+          "oneOf": ["Australia", "Canada", "USA", "France", "Germany", "Japan", "Great Britain", "South Africa", "India", "Russia", "United Arab Emirates", "Brazil", "Denmark", "China"]
+        }
+      },
+      {
+        "filter": {
+          "field": "TIME",
+          "oneOf": [1990, 2018]
+        }
+      }
+    ],
+    "encoding": {
+      "x": {
+        "field": "Value",
+        "type": "quantitative",
+        "title": "Renewable Energy % of Total Electricity"
+      },
+      "y": {
+        "field": "LOCATION",
+        "type": "nominal",
+        "title": "Country",
+        "axis": {
+          "offset": 5,
+          "ticks": false,
+          "minExtent": 70,
+          "domain": false
+        }
+      }
+    },
+    "layer": [
+      {
+        "mark": "line",
+        "encoding": {
+          "detail": {
+            "field": "LOCATION",
+            "type": "nominal"
+          },
+          "color": {"value": "#db646f"}
+        }
+      },
+      {
+        "mark": {
+          "type": "point",
+          "filled": true
+        },
+        "encoding": {
+          "color": {
+            "field": "TIME",
+            "type": "ordinal",
+            "scale": {
+              "domain": [1990, 2018],
+              "range": ["#964B00", "#006400"]
+            },
+            "title": "Year"
+          },
+          "size": {"value": 100},
+          "opacity": {"value": 1},
+          "tooltip": [
+            { "field": "LOCATION", "type": "nominal", "title": "Location" },
+            { "field": "Value", "type": "quantitative", "title": "% of Renewables"},
+            { "field": "TIME", "type": "ordinal", "title" : "Year" }
+        ]
+        }
+      },
+      {
+        "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "dx": 100,
+            "dy":0,
+            "fontSize": 13
+        },
+        "encoding": {
+            "text": {"field": "Text", "type": "nominal"},
+            "color": {"value": "#808080"},
+            "opacity": {
+            "condition": {
+                    "test": "datum['LOCATION'] == 'Australia' & datum['TIME'] == 2018",
+                    "value": 1
+                },
+                "value": 0
+            } 
+        }
+    }
+    ]
+  }

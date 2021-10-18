@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Green Transition</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@100;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Taviraj:wght@100;800&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="CSS/styles.css" media="all">
+
+
+</head>
+<body>
+
+ <div class="page">
+
+   <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-3-4">
+        <h1 class = "title">The Green Transition</h1>
+        <p class = "greta">"We can’t save the world by playing by the rules, because the rules have to be changed" - Greta Thunberg</p>
+        <p>By Sohan</p>
+      </div>
+      <div class="pure-u-1-4">
+        <img src="image/earth.jpg" alt="Earth" width = "150" height = "auto">
+      </div>
+    </div>
+    <hr class="rounded">
+  <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>Climate change</h2>
+            <p>Climate change is one of the greatest challenges humankind is to face. It is a challenge that must be overcome to keep Earth functional, as a planet for humans to thrive.</p>
+            <p>The burning of coal propagated the industrial revolution which brought an immense change – a higher standard of living. People had access to readily available electricity, fuel for transport and efficient machinery resulting in production at scale. Although industrial revolution brought great benefits, a few decades later humans have come to terms with its harrowing effects.</p> 
+            <p> Over the years we notice countries, which are considered to be highly developed, are the prime emitters of carbon dioxide (CO2) and other environmentally damaging gases.</p> 
+          </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis1" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-2-3">
+          <div id="vis2"  class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-3">
+          <div class="description description-right">
+            <h2>Increasing natural disasters</h2>
+            <p>The science has been crystal clear since the late 1900s on the effects that these gases are causing to the planet. These effects include:</p>   
+            <p>The list is endless. Throughout time there has been a dramatic increase in natural disasters. Flooding and extreme weather seem to be the leading disasters. After 1975, the number of natural disasters has nearly quadrupled. This is not a mere coincidence. It is directly correlated with the increase in emissions. </p>
+            <p>The emissions create a greenhouse effect, which is why extreme weather is one of the leading natural disasters. This extreme weather has been warming and melting ice caps in the north and south poles causing an increase in water levels. Due to this increase, communities residing on islands and coastlines have become more prone to floods. Even communities residing in the centre of their country experience torrential rains and flash flooding.</p>
+          </div>
+        </div>
+      
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <h2>Natrual disasters effects on lives</h2>
+          <p>Climate change isn’t a local issue, it is a global systemic problem. The devastating effects of climate change has a dual effect. </p>
+          <p>The first is on the economy in which millions of dollars must be poured into response and recovery efforts, extracting a portion of a nation’s GDP which could have best been used to provide other services to advance its wellbeing of its citizens.</p>
+          <p>More importantly, the second effect of climate change is in which people lose their lives. This has been ever growing proportionally to the trend of increasing number of natural disasters. These deaths aren’t mapped to just a single country. Its effects are mapped to every continent in the world.</p>
+          </div>
+      </div>
+      <div class="pure-u-2-3">
+        <div id="vis3"  class="vis-container"></div>
+      </div>
+    
+    </div>
+    <!-- end pure grid group -->
+
+        <!-- pure grid group -->
+        <div class="pure-g">
+          <div class="pure-u-2-3">
+            <div id="vis4"  class="vis-container"></div>
+          </div>
+          <div class="pure-u-1-3">
+            <div class="description description-right">
+              <h2>Australia's power stations</h2>
+              <p>According to the OECD, Australia has been labelled as the second dirtiest country through electricity generation in the world. Australia is also renowned in the world for its astonishingly slow adoption of renewables. Although Australia is obnoxiously infamous for their slow adoption, they have nevertheless committed to going net-zero by 2050 as per the Paris agreement.</p>
+              <p>Numerous steps have been taken in Australia’s development of green infrastructure, especially in solar energy. However, this is limited to the Eastern coast of Australia. Western Australia which is renowned for its booming mining sector, is slow in its advancements in the adoption of green energy. </p>
+              <p>As a developed economy, Australia must join its counterparts in advancing the green economy and committing to more aggressive emission targets such as some of the European countries. The point has already been made that the temperature has already risen above one degree Celsius and is continuing to rise rapidly. Unfortunately this means that Australia’s commitment to carbon neutrality by 2050 may not be enough.</p>
+             </div>
+          </div>
+      </div>
+      <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <h2>Australia's slow transition</h2>
+          <p>Since the 1990s, Australia have not progressed much. The percentage of Australia’s electricity grid which remains on renewables has been for the majority, the same. Some other developed countries, especially in Europe, which had much less of their electricity from renewables, have now advanced to overtake Australia.</p>
+          <p>Another area of concern is the backward transition to renewables from some of the more developing economies such as India, South Africa and China. Undoubtedly, access to electricity and technologies is needed to develop an economy. These developing countries’ appetite for energy is immensely growing. However, they must be supported to ensure they grow their economies in a sustainable and renewable manner.</p>
+          <p>Although developed countries are responsible for climate change, its effects strike developing countries and economies such as south-east Asia, Africa and parts of Southern America. It is the responsibility of the developed countries to ensure that the developing countries are able to advance their economies using renewables and not major polluters such as coal.</p>
+        </div>
+      </div>
+      <div class="pure-u-2-3">
+        <div id="vis5"  class="vis-container"></div>
+      </div>
+    
+    </div>
+    <!-- end pure grid group -->
+  
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by <a href="https://github.com/spuj0001" target="_blank">Sohan Pujar</a>. The datasource is <a href="#"" target="_blank">some data repository online</a>.</p>
+        <p> Copyright (C) 2021 Github</p>
+        </div>
+    </div>
+
+  
+
+  </div> <!-- end page -->
+   
+<script type="text/javascript">
+  var specVis1 = "chart_CO2EmissionsPerCapita.json";
+  var specVis2= "chart_disaster.json";
+  var specVis3 = "chart_deaths_map.json";
+  var specVis4 = "chart_powerstations.json";
+  var specVis5 = "chart_renewableuptake.json";
+
+  vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+</script>
+</body>
+</html>

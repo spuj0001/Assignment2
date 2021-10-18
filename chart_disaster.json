@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "vconcat": [{
+            "height": 200,
+            "width" : "container",
+            "title": "Number of Disasters by Disaster Type",
+            "data": { "url":"data/natural-disasters-by-type.csv" },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "timeUnit": "year",
+                    "scale": { "domain": { "param": "time_brush" } },
+                    "axis": { "title": "", "tickCount": 5, "grid": false }
+                },
+                "y": { "aggregate": "sum", "field": "Number of disasters", "title": "Number of disasters" },
+                "color": {
+                    "field": "Entity",
+                    "title": "Type of Disaster",
+                    "scale": {
+                        "scheme": "set2"
+                    }
+                }}},
+        {"height": 200,
+            "width" : "container",
+            "mark": "line",
+            "title": "Use this line chart to filter out the data based on time",
+            "data": { "url":"data/natural-disasters-by-type.csv" },
+            "params": [{
+                "name": "time_brush",
+                "select": { "type": "interval", "encodings": ["x"] }
+            }],
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "timeUnit": "year",
+                    "axis": { "title": "", "format": "%Y" }
+                },
+                "y": {
+                    "field": "Number of disasters",
+                    "aggregate": "sum",
+                    "axis": { "tickCount": 3, "grid": false },
+                    "title": "Total"
+                }
+            }
+        }
+    ],
+    "config": { "title": { "font": "sans-serif", "fontSize": 14 } }
+}

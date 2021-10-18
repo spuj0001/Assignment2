@@ -1,0 +1,75 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Number of Deaths due to Natural Disasters",
+    "width": 675,
+    "height": 370,
+    "projection": {"type": "equirectangular"},
+    "params": [
+    {
+      "name": "Year",
+      "value": 1990,
+      "bind": {"input": "range", "min": 1990, "max": 2017, "step": 1}
+      }
+  ],
+    "data": {
+      "url": "data/natural-disaster-deaths-ihme.csv"
+    },
+    "transform": [
+      {
+        "lookup": "Code",
+        "from": {
+          "data": {
+            "url": "world.json",
+            "format": {"type": "topojson", "feature": "world.geo"}
+          },
+          "key": "properties.iso_a3"
+        },
+        "as": "geo"
+      },
+      {"filter": "datum.Year == Year"}
+    ],
+    "layer" : [{
+    "mark": {"type": "geoshape"},
+    "encoding": {
+      "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+      "color": {
+          "field": "Deaths", 
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [50, 100, 250, 500, 1000, 2000],
+            "range": ["#ffffb2", "#fed976", "#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#b10026"]
+          }
+        },
+      "tooltip": [
+        {"field": "Country Name", "type": "nominal", "title": "Country"},
+        {"field": "Deaths", "type": "quantitative", "title": "Deaths"}
+      ]
+    }},
+    {
+      "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": 300,
+          "dy": -160,
+          "fontSize": 13
+      },
+      "encoding": {
+          "text": {"field": "Text", "type": "nominal"},
+          "color": {"value": "#808080"},
+          "opacity": {
+          "condition": {
+                  "test": "datum['Country Name'] == 'Afghanistan'",
+                  "value": 1
+              },
+              "value": 0
+          } 
+      }
+  }]
+  }
+
+  
